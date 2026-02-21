@@ -1,12 +1,13 @@
 # Cuba Roleplay 2D Starter (Godot 4)
 
-Proyecto base jugable estilo roleplay 2D para abrir directamente en Godot 4.
+Proyecto base jugable estilo roleplay 2D para abrir directamente en Godot 4, con estética sobria tipo supervivencia/Project Zomboid (sin zombis).
 
 ## Incluye
-- Mapa simple con calles/zonas.
+- Mapa urbano sencillo con zonas y checkpoint.
 - Jugador con movimiento WASD/flechas.
-- NPC interactivo (tecla `E`).
-- Sistema básico de trabajo y dinero (mensajes en HUD).
+- NPC interactivo (tecla `E`) para trabajo estatal roleplay.
+- HUD superior con estado, dinero y salud.
+- Panel inferior de ítems tipo quickbar (8 slots) al estilo RPG/survival.
 - Assets vectoriales propios (`assets/*.svg`) sin copyright restrictivo (CC0).
 
 ## Abrir y ejecutar
@@ -18,5 +19,8 @@ Proyecto base jugable estilo roleplay 2D para abrir directamente en Godot 4.
 - Mover: `WASD` o flechas
 - Interactuar con NPC cercano: `E`
 
-## Notas
-- Es una base funcional para expandir a un roleplay completo (inventario, jobs múltiples, economía persistente, multiplayer, etc.).
+## Próximos pasos sugeridos
+- Inventario real con drag & drop.
+- Sistema de hambre/sueño/energía.
+- Facciones y reputación por distrito.
+- Guardado persistente y multiplayer.

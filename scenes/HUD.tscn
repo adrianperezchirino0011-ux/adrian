@@ -5,14 +5,101 @@
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_script")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 420.0
-offset_bottom = 120.0
+[node name="TopPanel" type="Panel" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 500.0
+offset_bottom = 180.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TopPanel"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 472.0
+offset_bottom = 152.0
 
-[node name="InfoLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TopPanel/MarginContainer"]
+
+[node name="InfoLabel" type="Label" parent="TopPanel/MarginContainer/VBoxContainer"]
 text = "Estado"
 
-[node name="MoneyLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="MoneyLabel" type="Label" parent="TopPanel/MarginContainer/VBoxContainer"]
 text = "Dinero: $0"
+
+[node name="RegimeLabel" type="Label" parent="TopPanel/MarginContainer/VBoxContainer"]
+text = "Estado cívico: Neutral"
+
+[node name="HealthBar" type="ProgressBar" parent="TopPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(420, 24)
+show_percentage = false
+max_value = 100.0
+value = 100.0
+
+[node name="HealthText" type="Label" parent="TopPanel/MarginContainer/VBoxContainer/HealthBar"]
+offset_left = 10.0
+offset_top = 2.0
+offset_right = 170.0
+offset_bottom = 22.0
+text = "Salud: 100/100"
+
+[node name="QuickBarPanel" type="Panel" parent="."]
+offset_left = 260.0
+offset_top = 644.0
+offset_right = 1020.0
+offset_bottom = 712.0
+
+[node name="QuickBarMargin" type="MarginContainer" parent="QuickBarPanel"]
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 750.0
+offset_bottom = 60.0
+
+[node name="QuickSlots" type="HBoxContainer" parent="QuickBarPanel/QuickBarMargin"]
+theme_override_constants/separation = 8
+
+[node name="Slot1" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
+custom_minimum_size = Vector2(82, 42)
+
+[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot1"]
+text = "1 Agua"
+
+[node name="Slot2" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
+custom_minimum_size = Vector2(82, 42)
+
+[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot2"]
+text = "2 Pan"
+
+[node name="Slot3" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
+custom_minimum_size = Vector2(82, 42)
+
+[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot3"]
+text = "3 Radio"
+
+[node name="Slot4" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
+custom_minimum_size = Vector2(82, 42)
+
+[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot4"]
+text = "4 Mapa"
+
+[node name="Slot5" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
+custom_minimum_size = Vector2(82, 42)
+
+[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot5"]
+text = "5 Llave"
+
+[node name="Slot6" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
+custom_minimum_size = Vector2(82, 42)
+
+[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot6"]
+text = "6 ID"
+
+[node name="Slot7" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
+custom_minimum_size = Vector2(82, 42)
+
+[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot7"]
+text = "7 Botiq"
+
+[node name="Slot8" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
+custom_minimum_size = Vector2(82, 42)
+
+[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot8"]
+text = "8 Libre"
