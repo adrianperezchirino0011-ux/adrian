@@ -5,101 +5,126 @@
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_script")
 
-[node name="TopPanel" type="Panel" parent="."]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 500.0
-offset_bottom = 180.0
+[node name="TopLeftPanel" type="Panel" parent="."]
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 454.0
+offset_bottom = 186.0
+modulate = Color(0.12, 0.12, 0.12, 0.92)
 
-[node name="MarginContainer" type="MarginContainer" parent="TopPanel"]
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 472.0
-offset_bottom = 152.0
+[node name="Margin" type="MarginContainer" parent="TopLeftPanel"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 430.0
+offset_bottom = 162.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TopPanel/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="TopLeftPanel/Margin"]
+theme_override_constants/separation = 5
 
-[node name="InfoLabel" type="Label" parent="TopPanel/MarginContainer/VBoxContainer"]
+[node name="InfoLabel" type="Label" parent="TopLeftPanel/Margin/VBox"]
 text = "Estado"
 
-[node name="MoneyLabel" type="Label" parent="TopPanel/MarginContainer/VBoxContainer"]
-text = "Dinero: $0"
+[node name="MoneyLabel" type="Label" parent="TopLeftPanel/Margin/VBox"]
+text = "Efectivo: $0"
 
-[node name="RegimeLabel" type="Label" parent="TopPanel/MarginContainer/VBoxContainer"]
-text = "Estado cívico: Neutral"
+[node name="RegimeLabel" type="Label" parent="TopLeftPanel/Margin/VBox"]
+text = "Estado cívico: Observado"
 
-[node name="HealthBar" type="ProgressBar" parent="TopPanel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(420, 24)
+[node name="HealthBar" type="ProgressBar" parent="TopLeftPanel/Margin/VBox"]
+custom_minimum_size = Vector2(390, 24)
 show_percentage = false
 max_value = 100.0
 value = 100.0
 
-[node name="HealthText" type="Label" parent="TopPanel/MarginContainer/VBoxContainer/HealthBar"]
-offset_left = 10.0
+[node name="HealthText" type="Label" parent="TopLeftPanel/Margin/VBox/HealthBar"]
+offset_left = 8.0
 offset_top = 2.0
-offset_right = 170.0
+offset_right = 190.0
 offset_bottom = 22.0
-text = "Salud: 100/100"
+text = "Salud 100/100"
 
-[node name="QuickBarPanel" type="Panel" parent="."]
-offset_left = 260.0
-offset_top = 644.0
-offset_right = 1020.0
-offset_bottom = 712.0
+[node name="TopRightPanel" type="Panel" parent="."]
+offset_left = 1020.0
+offset_top = 14.0
+offset_right = 1264.0
+offset_bottom = 120.0
+modulate = Color(0.12, 0.12, 0.12, 0.92)
 
-[node name="QuickBarMargin" type="MarginContainer" parent="QuickBarPanel"]
-offset_left = 10.0
+[node name="Margin" type="MarginContainer" parent="TopRightPanel"]
+offset_left = 8.0
 offset_top = 8.0
-offset_right = 750.0
-offset_bottom = 60.0
+offset_right = 236.0
+offset_bottom = 98.0
 
-[node name="QuickSlots" type="HBoxContainer" parent="QuickBarPanel/QuickBarMargin"]
+[node name="VBox" type="VBoxContainer" parent="TopRightPanel/Margin"]
+
+[node name="DistrictLabel" type="Label" parent="TopRightPanel/Margin/VBox"]
+text = "Distrito: Centro"
+
+[node name="TimeLabel" type="Label" parent="TopRightPanel/Margin/VBox"]
+text = "Hora: 08:00"
+
+[node name="BottomQuickbar" type="Panel" parent="."]
+offset_left = 205.0
+offset_top = 642.0
+offset_right = 1075.0
+offset_bottom = 714.0
+modulate = Color(0.08, 0.08, 0.08, 0.96)
+
+[node name="Margin" type="MarginContainer" parent="BottomQuickbar"]
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 858.0
+offset_bottom = 62.0
+
+[node name="Slots" type="HBoxContainer" parent="BottomQuickbar/Margin"]
 theme_override_constants/separation = 8
 
-[node name="Slot1" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
-custom_minimum_size = Vector2(82, 42)
+[node name="Slot1" type="Panel" parent="BottomQuickbar/Margin/Slots"]
+custom_minimum_size = Vector2(98, 44)
+modulate = Color(0.65, 0.55, 0.24, 1)
 
-[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot1"]
+[node name="Label" type="Label" parent="BottomQuickbar/Margin/Slots/Slot1"]
 text = "1 Agua"
 
-[node name="Slot2" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
-custom_minimum_size = Vector2(82, 42)
+[node name="Slot2" type="Panel" parent="BottomQuickbar/Margin/Slots"]
+custom_minimum_size = Vector2(98, 44)
 
-[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot2"]
+[node name="Label" type="Label" parent="BottomQuickbar/Margin/Slots/Slot2"]
 text = "2 Pan"
 
-[node name="Slot3" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
-custom_minimum_size = Vector2(82, 42)
+[node name="Slot3" type="Panel" parent="BottomQuickbar/Margin/Slots"]
+custom_minimum_size = Vector2(98, 44)
 
-[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot3"]
+[node name="Label" type="Label" parent="BottomQuickbar/Margin/Slots/Slot3"]
 text = "3 Radio"
 
-[node name="Slot4" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
-custom_minimum_size = Vector2(82, 42)
+[node name="Slot4" type="Panel" parent="BottomQuickbar/Margin/Slots"]
+custom_minimum_size = Vector2(98, 44)
 
-[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot4"]
+[node name="Label" type="Label" parent="BottomQuickbar/Margin/Slots/Slot4"]
 text = "4 Mapa"
 
-[node name="Slot5" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
-custom_minimum_size = Vector2(82, 42)
+[node name="Slot5" type="Panel" parent="BottomQuickbar/Margin/Slots"]
+custom_minimum_size = Vector2(98, 44)
 
-[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot5"]
+[node name="Label" type="Label" parent="BottomQuickbar/Margin/Slots/Slot5"]
 text = "5 Llave"
 
-[node name="Slot6" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
-custom_minimum_size = Vector2(82, 42)
+[node name="Slot6" type="Panel" parent="BottomQuickbar/Margin/Slots"]
+custom_minimum_size = Vector2(98, 44)
 
-[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot6"]
+[node name="Label" type="Label" parent="BottomQuickbar/Margin/Slots/Slot6"]
 text = "6 ID"
 
-[node name="Slot7" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
-custom_minimum_size = Vector2(82, 42)
+[node name="Slot7" type="Panel" parent="BottomQuickbar/Margin/Slots"]
+custom_minimum_size = Vector2(98, 44)
 
-[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot7"]
-text = "7 Botiq"
+[node name="Label" type="Label" parent="BottomQuickbar/Margin/Slots/Slot7"]
+text = "7 Bolsa"
 
-[node name="Slot8" type="Panel" parent="QuickBarPanel/QuickBarMargin/QuickSlots"]
-custom_minimum_size = Vector2(82, 42)
+[node name="Slot8" type="Panel" parent="BottomQuickbar/Margin/Slots"]
+custom_minimum_size = Vector2(98, 44)
 
-[node name="Label" type="Label" parent="QuickBarPanel/QuickBarMargin/QuickSlots/Slot8"]
+[node name="Label" type="Label" parent="BottomQuickbar/Margin/Slots/Slot8"]
 text = "8 Libre"
